@@ -55,7 +55,16 @@ const fs = require('fs');
 
 // recommended for writing files
 
-const writeStream = fs.createWriteStream("file.txt", "utf8",);
+// const writeStream = fs.createWriteStream("file.txt", "utf8",);
 
-writeStream.write("So, in Ramzan we should perform many mnay things\n");
-console.log("Data written successfully!");
+// writeStream.write("So, in Ramzan we should perform many mnay things\n");
+// console.log("Data written successfully!");
+
+
+
+// pipe
+
+const readStream = fs.createReadStream("file.txt","utf-8");
+const writeStream = fs.createWriteStream("file_copy.txt","utf-8");
+
+readStream.pipe(writeStream);
